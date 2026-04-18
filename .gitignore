@@ -1,0 +1,60 @@
+# ── Python ───────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Entornos virtuales ────────────────────────────────────────
+venv/
+env/
+.env/
+.venv/
+
+# ── Jupyter ───────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ── Modelos guardados (muy pesados para GitHub) ───────────────
+*.h5
+*.pt
+*.bin
+*.safetensors
+distilbert_finetuned_parcial/
+results_*/
+logs_*/
+best_bilstm_model.h5
+bilstm_sentiment_model.h5
+
+# ── Dataset (no subir a GitHub) ───────────────────────────────
+*.csv
+IMDB-Dataset.csv
+*.zip
+
+# ── Métricas generadas (sí subir si quieres) ─────────────────
+# metricas_etapa*.csv   ← comentar esta línea para incluirlas
+
+# ── Gráficas generadas ────────────────────────────────────────
+*.png
+*.jpg
+assets/*.png
+
+# ── Sistema operativo ─────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDEs ─────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Google Colab / Drive ──────────────────────────────────────
+drive/
+content/

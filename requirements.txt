@@ -1,0 +1,39 @@
+# ============================================================
+# Proyecto Final — Análisis de Sentimientos con Deep Learning
+# requirements.txt
+# Probado en Python 3.10+ / Google Colab (abril 2026)
+# ============================================================
+
+# ── Core ─────────────────────────────────────────────────────
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+
+# ── Visualización ────────────────────────────────────────────
+matplotlib>=3.7.0
+seaborn>=0.13.0
+
+# ── Deep Learning — PyTorch ──────────────────────────────────
+torch>=2.0.0
+# Para GPU con CUDA 12.x usar:
+# pip install torch --index-url https://download.pytorch.org/whl/cu121
+
+# ── Deep Learning — TensorFlow / Keras (Etapa 2) ─────────────
+tensorflow>=2.13.0
+
+# ── HuggingFace (Etapas 3, 4, 5) ─────────────────────────────
+transformers>=5.0.0
+datasets>=2.14.0
+accelerate>=0.24.0
+peft>=0.9.0                 # LoRA y PEFT (Etapa 5)
+tokenizers>=0.15.0
+
+# ── Embeddings Word2Vec (Etapa 2) ─────────────────────────────
+gensim>=4.3.0
+
+# ── Despliegue (Etapa 5) ──────────────────────────────────────
+gradio>=4.0.0
+
+# ── Utilidades ───────────────────────────────────────────────
+joblib>=1.3.0
+tqdm>=4.65.0

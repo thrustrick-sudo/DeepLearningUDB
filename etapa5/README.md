@@ -26,7 +26,7 @@ Interfaz Gradio con:
 - 5 ejemplos precargados
 - URL pública compartible (share=True)
 
-## ⚠️ Bug conocido — Gradio clasifica todo como NEGATIVO
+## Bug conocido — Gradio clasifica todo como NEGATIVO
 Si ocurre este problema, ejecutar antes de lanzar Gradio:
 
 ```python

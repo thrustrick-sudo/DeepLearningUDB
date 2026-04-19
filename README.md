@@ -13,9 +13,16 @@
 
 ## Descripción del Proyecto
 
-Sistema progresivo de **análisis de sentimientos con chatbot inteligente** desarrollado como proyecto final del curso de Deep Learning. El sistema clasifica textos (reseñas o comentarios) como positivos o negativos y genera respuestas automáticas adaptadas al sentimiento detectado.
+Sistema de **análisis de sentimientos con chatbot inteligente** desarrollado de forma incremental a lo largo de cinco etapas.
 
-El proyecto fue construido incrementalmente a lo largo de 5 etapas, cada una introduciendo arquitecturas y técnicas más avanzadas, permitiendo comparar el desempeño entre enfoques.
+El sistema clasifica textos (reseñas o comentarios) como positivos o negativos y genera respuestas automáticas condicionadas al sentimiento detectado.
+
+El enfoque del proyecto permite comparar distintos paradigmas:
+
+- Modelos clásicos de Machine Learning
+- Redes neuronales profundas
+- Modelos basados en Transformers
+- Técnicas modernas de fine-tuning eficiente
 
 ---
 
@@ -25,11 +32,11 @@ El proyecto fue construido incrementalmente a lo largo de 5 etapas, cada una int
 Texto de entrada
       │
       ▼
-┌─────────────────────────────┐
+┌──────────────────────────────┐
 │   Clasificador de Sentimiento│
-│   DistilBERT fine-tuned     │
-│   (IMDb 50K reviews)        │
-└────────────┬────────────────┘
+│   DistilBERT fine-tuned      │
+│   (IMDb 50K reviews)         │
+└────────────┬─────────────────┘
              │
     ┌────────┴────────┐
     │                 │
@@ -54,27 +61,49 @@ POSITIVO          NEGATIVO
 ```
 sentiment-chatbot-dl/
 │
-├── README.md                          ← Este archivo
-├── LICENSE                            ← Licencia MIT
-├── requirements.txt                   ← Dependencias del proyecto
+│   README.md                                       ← Este archivo
+│   LICENSE                                         ← Licencia MIT
+│   requirements.txt                                ← Dependencias del proyecto
+│
+├── deploys/
+│       fine-tuning.ipynb
+│       vertex-api.zip
+│
+├── docs/
+│       informe_tecnico_grupo3.pdf
+│       presentacion_grupo3.pptx
 │
 ├── etapa1/
-│   └── Notebook1_Etapa1_Sentimientos.ipynb   ← MLP + TF-IDF (baseline)
+│       Notebook1_Etapa1_Sentimientos.ipynb           ← MLP + TF-IDF (baseline)
+│       README.md
 │
 ├── etapa2/
-│   └── Notebook2_Etapa2_BiLSTM.ipynb         ← BiLSTM + Word2Vec
+│       Notebook2_Etapa2_BiLSTM.ipynb                 ← BiLSTM + Word2Vec
+│       README.md
 │
 ├── etapa3/
-│   └── Notebook3_Etapa3_Transformers.ipynb   ← DistilBERT fine-tuned
+│       Notebook3_Etapa3_Transformers.ipynb           ← DistilBERT fine-tuned
+│       README.md
 │
 ├── etapa4/
-│   └── Notebook4_Etapa4_Chatbot.ipynb        ← Chatbot DistilBERT + GPT-2
+│       Notebook4_Etapa4_Chatbot.ipynb                ← Chatbot DistilBERT + GPT-2
+│       README.md
 │
 ├── etapa5/
-│   └── Notebook5_Etapa5_Finetuning_Despliegue.ipynb  ← Fine-tuning parcial + LoRA + Gradio
+│       Notebook_Etapa5_Finetuning_Despliegue.ipynb   ← Fine-tuning parcial + LoRA + Gradio
+│       README.md
 │
-└── assets/
-    └── (gráficas y figuras generadas por los notebooks)
+├── media/
+│   │   presentacion_proyecto_dl_grupo3.mp4
+│   │
+│   └── img/
+│
+├── models/
+│   └── bilstm/
+│
+├── outputs/
+│
+└── reports/
 ```
 
 ---
@@ -85,7 +114,8 @@ sentiment-chatbot-dl/
 | ------ | ---------------------------- | ---------- | -------- | --------------- | ------- |
 | **E1** | MLP + TF-IDF                 | **89.09%** | 0.890    | ~500K           | ~30 seg |
 | **E2** | BiLSTM + Word2Vec            | 88.63%     | 0.886    | ~2M             | ~30 min |
-| **E3** | DistilBERT fine-tuned        | **~93%**   | ~0.930   | 66M             | ~60 min |
+| **E3** | DistilBERT fine-tuned        | **~92.1%** | ~0.921   | 66M             | ~30 min |
+| **E3** | DistilBERT fine-tuned        | **~93.9%** | ~0.939   | 125M            | ~65 min |
 | **E4** | Chatbot (DistilBERT + GPT-2) | —          | —        | 66M + 117M      | —       |
 | **E5** | Fine-tuning parcial          | ~86%       | ~0.860   | 66M (1.5M ent.) | ~28 min |
 | **E5** | LoRA (r=8)                   | ~86%       | ~0.860   | 66M (0.3M ent.) | ~15 min |
@@ -113,6 +143,40 @@ sentiment-chatbot-dl/
 - Google Colab (recomendado) o GPU local con CUDA
 - ~15 GB de espacio en disco para modelos
 - RAM: mínimo 12 GB (16 GB recomendado)
+
+---
+
+## Demo y Recursos
+
+### Demo interactiva:
+
+https://huggingface.co/spaces/rugamas/udb_sentimientos
+
+### Archivos del proyecto:
+
+https://drive.google.com/drive/folders/18Gce0zUPXkFB7nm1biDKqRRGNhbOP8eu?usp=sharing
+
+---
+
+## Despliegue
+
+El proyecto incluye una implementación de despliegue mediante interfaz web y API.
+
+### Interfaz interactiva:
+
+Implementada con Gradio (Etapa 5)
+
+API basada en Next.js:
+
+```
+npx create-next-app@latest vertex-api
+```
+
+Archivos relacionados:
+
+```
+deploys/vertex-api.zip
+```
 
 ---
 

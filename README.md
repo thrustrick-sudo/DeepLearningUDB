@@ -59,7 +59,7 @@ POSITIVO          NEGATIVO
 ## Estructura del Repositorio
 
 ```
-sentiment-chatbot-dl/
+DeepLearningUDB/
 │
 │   README.md                                       ← Este archivo
 │   LICENSE                                         ← Licencia MIT

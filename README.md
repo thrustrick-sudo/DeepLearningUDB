@@ -311,7 +311,10 @@ Este proyecto está bajo la licencia MIT. Ver el archivo [LICENSE](LICENSE) para
 
 ## Autores
 
-Proyecto desarrollado como entregable final del curso de **Deep Learning**. César Bladimir Romero Rugamas, Guillermo Ulises Palacios Flores y Walter Alexander Salguero Rodríguez.
+Proyecto desarrollado como entregable final del curso de **Deep Learning**. 
+- César Bladimir Romero Rugamas.
+- Guillermo Ulises Palacios Flores.
+- Walter Alexander Salguero Rodríguez.
 
 ---
 
